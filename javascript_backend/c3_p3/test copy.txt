@@ -1,0 +1,2 @@
+hello world this is my promise function
+ this is appended text

@@ -1,0 +1,66 @@
+<!-- multicolor nav bar -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multicolor nav bar</title>
+ </head>
+ <style>
+    /* pink color theme */
+     /* :root{
+        
+        --col1 : rgb(230, 43, 174);
+        --col2 :  rgb(241, 179, 222);
+    }*/
+    /*blue color theme*/
+    :root{ 
+    
+        --col1 :rgb(114, 114, 238);
+        --col2 :rgb(208, 208, 250);
+    }
+    *{ 
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        background-color: var(--col2);
+    }
+    nav{
+        /* background-color: aquamarine; */
+        background-color: var(--col1);
+        padding: 12px;
+    }
+    ul li{
+        list-style: none;
+        display: inline;
+        padding: 23px;
+        font-size: small;
+        font-weight: 100;
+    }
+    ul li:hover{
+        /* background-color: rgb(244, 98, 217); */
+        background-color: var(--col2);
+    
+
+    }
+    ul li a{
+        /* text-decoration: none; */
+        /*underline gone*/
+        color: black;
+    }
+ </style>
+ <body>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">home</a></li>
+                <li><a href="/">contact</a></li>
+                <li><a href="/">about</a></li>
+                <li><a href="/">services</a></li>
+            </ul>
+        </nav>
+    </header>
+ </body>
+ </html>

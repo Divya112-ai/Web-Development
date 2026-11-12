@@ -1,0 +1,36 @@
+body{
+    background-color: black;
+}
+nav{
+    border: rgb(246, 237, 237) solid 2px;
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+}
+header{
+    display: flex;
+    /* grid-template-rows:auto ; */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.left{
+    border: rgb(228, 224, 224) solid 2px;
+    width: 40vw;
+    height: 90vh;
+ margin: 10px;
+}
+.right{
+    border: rgb(251, 235, 235) solid 2px;
+    width: 40vw;
+    height: 90vh;
+    margin: 10px;
+}
+footer{
+    border: rgb(178, 172, 172) solid 2px;
+    width: 100vw;
+    height: 20vh;
+    margin: 20px;
+}

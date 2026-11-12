@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock-paper-scissor</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+       text-align: center;
+        }
+        h1{
+            background-color: rgb(53, 53, 184);
+            color: white;
+            height: 5rem;
+            text-align: center;
+            line-height: 5rem;
+        }
+        .choices{
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        .choices img{
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+            margin: 0 1rem;
+        }
+        .choice:hover{
+            transform: scale(1.1);
+            transition: transform 0.2s;
+            cursor: pointer ;
+            background-color: lightgray;
+        }
+        .choice{
+            border-radius: 150px;
+        }
+        .scoreboard{
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            font-size: 3rem;
+            align-items: center;
+
+        }
+        #user-score, #comp-score{
+    
+            margin:0 4rem;
+            color: rgb(53, 53, 184);
+            font-size: 4rem;   
+            font-weight: bold;
+            /* border: 2px solid rgb(53, 53, 184); */
+        }
+        .msg-container{
+            margin-top: 2rem;
+            font-size: 2rem;
+            color: rgb(53, 53, 184);
+            font-weight: bold;
+        }
+        #msg{
+            background-color: lightgreen;
+            color: rgb(53, 53, 184);
+            padding: 20px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>rock-paper-scissor</h1>
+    <div class="choices">
+        <div class="choice" id="rock">
+            <img src="roick.png" alt="">
+        </div>
+        <div class="choice" id="paper">
+            <img src="paper.png" alt="">
+        </div>
+        <div class="choice" id="scissor">
+            <img src="scissor.png" alt="">
+        </div>
+    </div>
+    <div class="scoreboard">
+        <div class="score">
+            <p id="user-score">0</p>
+            <p>you</p>
+        </div>
+        <div class="score">
+            <p id="comp-score">0</p>
+            <p>computer</p>
+        </div>
+    </div>
+    <div class="msg-container">
+        <div id="msg">Play Your Move</div>
+    </div>
+
+
+        <script>
+            let userScore=0;
+            let compScore=0;
+            const choices=document.querySelectorAll(".choice");
+            const userScore_span=document.getElementById("user-score");
+            const compScore_span=document.getElementById("comp-score");
+            //to compute random choice for computer
+            const gencompchoice=()=>{
+                const options=["rock","paper","scissor"]
+                const randomindex=Math.floor(Math.random()*3)
+                return options[randomindex];
+            }    
+            
+            const drawGame=()=>{
+                console.log("game is draw");
+                msg.innerText="it's a draw!";
+                msg.style.backgroundColor="yellow";
+            }
+             const showWinner=(userwin , userchoice, compchoice)=>{
+                if(userwin===true){
+                    userScore++
+                    userScore_span.innerText=+userScore;
+                    console.log("user win");
+                    msg.innerText=`you win!... ${userchoice} beats ${compchoice}`;
+                    msg.style.backgroundColor="lightgreen";
+                }
+                else{
+                    compScore++
+                    compScore_span.innerText=+compScore;
+                    console.log("you lose");    
+                    msg.innerText=`you lose! ${compchoice} beats ${userchoice}`;
+
+                    msg.style.backgroundColor="lightcoral";
+                }
+             }
+            //function to play the game by computer
+          const playGame=(userchoice)=>{
+            console.log("user choice is:",userchoice);
+            const compchoice=gencompchoice();
+            console.log("computer choice is:",compchoice);
+            let userwin=true;
+            if(userchoice===compchoice)
+          {
+            //draw game
+            drawGame();
+          }
+          else {
+            // let userwin=true;
+            if(userchoice==="rock")
+          {
+            //scissor , paper
+            userwin=compchoice==="paper"?false:true
+          }
+          else if(userchoice==="paper")
+          {
+            // rock , scissor
+           userwin= compchoice==="scissor"?false:true;  
+        }
+         else{
+            //rock , paper
+        userwin= compchoice==="rock"?false:true;
+          }
+          }
+            showWinner(userwin , userchoice,compchoice);
+        }
+
+          //for user click event
+            choices.forEach((choice)=>{
+            choice.addEventListener("click",()=>{
+                const userchoice=choice.getAttribute("Id");
+                    // console.log("clicked",choiceId);
+               playGame(userchoice);
+                })
+            })
+        </script>
+</body>
+</html>

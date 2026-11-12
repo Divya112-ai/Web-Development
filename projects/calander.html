@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: poppins, sans-serif;
+            box-sizing: border-box;
+        }
+        .hero{
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(45deg ,black, rgb(23, 23, 53) , rgb(41, 41, 165) , rgb(123, 123, 235));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .calender{
+            width: 500px;
+            display: flex;
+            height: 250px;
+            background-color: white;
+            border-radius: 15px;
+            align-items: center;
+        }
+        .left , .right{
+            
+            height: 100%    ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            flex-direction: column;
+            border-right: 2px solid gray;
+        }
+        .right{
+            width: 42%;
+            background-color: rgb(255, 0, 110);
+            color: white;
+            border-top:10px;
+            border-right: none;
+            border-bottom-right-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        .left{
+            width: 58%;
+        }
+        #date{
+            font-size: 80px;
+            font-weight: 700;
+        }
+        #day, #month, #year{
+            font-size: 30px;
+            font-weight: 500;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="calender">
+        <div class="left">
+            <p id="date">01</p>
+            <p id="day">Sunday</p>
+        </div>
+        <div class="right">
+            <p id="month">January</p>
+            <p id="year">2025</p>
+        </div>
+        </div>
+    </div>
+    <script>
+        const date=document.getElementById("date");
+        const day=document.getElementById("day");
+        const month=document.getElementById("month");
+        const year=document.getElementById("year");
+
+        const today=new Date();
+        console.log(today);
+        date.innerHTML=(today.getDate()<10? "0":"")+today.getDate();
+        day.innerHTML=today.getDay().toString();
+        month.innerHTML=today.getMonth().toString();
+        year.innerHTML=today.getFullYear();
+
+    </script>
+</body>
+</html>

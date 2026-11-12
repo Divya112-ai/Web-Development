@@ -1,0 +1,91 @@
+<!-- ther is video description link 22 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sizing</title>
+    <style>
+        /* 196px=1inch */
+        /* 100 view port width */
+        /* em : inherits automatic size , multiplies 1.5 or 2 default size */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            font-size: 15px;
+        }
+        .cls{
+
+            background-color: aqua;
+            border: 2px solid black;
+            /* width: 2048px; */
+            width: 204px;
+            height: 10vh;
+            margin: auto;
+            box-sizing: border-box;
+        }
+        .cls1{
+            background-color: pink;
+            width :80vw;
+            height: 80vh;
+            margin : auto;
+            min-height: 90vh;
+
+            border : 2px solid black;
+            font-size: 20px;
+        }
+        span{
+            box-sizing: border-box;
+              background-color: pink;
+            width :80vw;
+            margin : 23px auto;
+            border : 2px solid black;
+        
+        }
+        .cls1 div{
+            font-size: 2em;
+            width :50%;
+            border: 1px solid blue;
+            /* parent's 50% */
+        }
+        .cls1 div div{
+            background-color: yellow;
+            border: red solid 2px;
+            font-size: 12px;
+            width: 50%;
+        }
+        .cls2{
+            background-color: blanchedalmond;
+            border:  black solid 2px;
+            /* width: 100vmin; */
+            width: 80vw;
+            margin: auto;
+            /* 100vmin = 100vh for computer */
+            /* 100vmin = 100vh for phone */
+        }
+    </style>
+</head>
+<body>
+    <div class="cls">
+        this is a box
+    </div>
+    <div class="cls1">
+        im another box Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis amet vitae aperiam.
+    <div>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis neque est quo facere iusto ipsum ratione numquam quam, ipsam dolorum cum consectetur asperiores.
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit blanditiis ad obcaecati dicta, sint fugit fuga itaque aperiam cum quis quidem nesciunt saepe libero in, laudantium magnam atque optio nostrum minus ab? Dolorem aspernatur quos, numquam quis inventore ipsam consequatur sequi natus obcaecati! Neque, modi.ipsum dolor sit amet, consectetur adipisicing elit. Magni vero voluptas saepe!</div>
+    </div>
+    </div>
+    <span>
+        im another box
+    </span>
+    <div class="cls2">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem non, reprehenderit, atque vero nam et modi quas voluptatum dolorem recusandae similique eligendi facilis!
+    </div>
+</body>
+</html>
+<!-- we cants apply margine uto for center , for block level e;ements , not for inline elements like span , bcz we cant give them -->
+ <!-- vmin: width for phone -->
+  <!-- vmin : height for computer -->

@@ -1,0 +1,49 @@
+<!-- 2d transformer : the property aloowes the contentto be restuctured in a way like rotate , translate , scale or skew  -->
+ <!-- as it is 2d data is transformed in x axis and y axis -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            background-color: antiquewhite;
+            border:  2px solid black;
+            height: 50px;
+            width: 50px;
+            /* transform: rotate(40deg); */
+            /* transform: rotate(0.25turn); */
+            /* transform: rotatex(40deg); */
+            /* transform: rotateY(96deg); */
+            transform: rotatez(80deg);
+            transform: scale(1.5);
+            transform: scalex(2);
+            transform: scaley(2);
+            /* transform: skew(5deg); */
+            /* transform: translate(20px); */
+            /* transform: translate(100%); */
+            /* transform: translatex(30%); */
+            /* transform: translate(100%); */
+            transform: tra;
+            transform: translate(20px) skew scale(40deg);
+            transform: sc;
+            display: flex;
+            justify-content: center ;
+            align-items: center;
+        }
+        .container{
+            width: 100vw;
+            height: 80vh;
+            border: 2px purple solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="box">
+        box
+    </div>
+    </div>
+</body>
+</html>

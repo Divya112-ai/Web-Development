@@ -1,0 +1,31 @@
+.wrap { margin-bottom: 48px; }
+.center { text-align: center; }
+.center .sub { margin-left: auto; margin-right: auto; }
+
+.tag {
+  display: inline-block;
+  font-size: 10px;
+  color: var(--orange);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+.title em { font-style: normal; color: var(--orange); }
+.light { color: rgba(255,255,255,0.95); }
+
+.sub {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 520px;
+  line-height: 1.75;
+}

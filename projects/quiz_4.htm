@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(4, 4, 63);
+        }
+
+        .app {
+            background-color: antiquewhite;
+            width: 90%;
+            max-width: 600px;
+            margin: 100px auto 0;
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .app h1 {
+            display: flex;
+            justify-content: center;
+            font-weight: 600px;
+            border-bottom: 3px solid gray;
+            padding-bottom: 20px;
+        }
+
+        .quiz {
+            padding: 20px 0;
+        }
+
+        .quiz h2 {
+            color: rgb(4, 4, 94);
+            font-weight: 500;
+        }
+
+        .btn:disabled {
+            cursor: no-drop;
+        }
+
+        .btn {
+            background: transparent;
+            color: #222;
+            font-weight: 500;
+            width: 100%;
+            border: 1px solid #222;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: left;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all, 0.3s;
+        }
+
+        .btn:hover:not[disabled] {
+            background-color: rgb(3, 3, 59);
+            color: aliceblue;
+        }
+
+        #next_btn {
+            background-color: #222;
+            color: #fff;
+            font-weight: 550;
+            width: 150px;
+            border: 0;
+            padding: 10px;
+            margin: 20px auto 0;
+            border-radius: 4px;
+            cursor: pointer;
+            /* display: flex; */
+            /* justify-content: center; */
+            /* align-items: center; */
+            display: none;
+
+        }
+
+        .correct {
+            background-color: rgb(130, 249, 130);
+        }
+
+        .incorrect {
+            background-color: rgb(245, 125, 125);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <h1>QUIZ GAME </h1>
+        <div class="quiz">
+            <h2 id="question">
+                q1
+            </h2>
+            <div id="ans_btn">
+                <button class="btn">ans1</button>
+                <button class="btn">ans2</button>
+                <button class="btn">ans3</button>
+                <button class="btn">ans4</button>
+            </div>
+            <button id="next_btn">
+                next
+            </button>
+        </div>
+    </div>
+    <script>
+        const questions = [
+            {
+                question: "which is largest animal in the world?",
+                answers: [
+                    { text: "shark", correct: "false" },
+                    { text: "blue whale", correct: "true" },
+                    { text: "elephant", correct: "false" },
+                    { text: "giraffe", correct: "false" },
+                ]
+            },
+            {
+                question: "Which planet is known as the Red Planet?",
+                answers: [
+                    { text: "Earth", correct: false },
+                    { text: "Mars", correct: true },
+                    { text: "Jupiter", correct: false },
+                    { text: "Venus", correct: false },
+                ]
+
+            },
+            {
+                question: "Which element has the chemical symbol 'O'?",
+                answers: [
+                    { text: "Gold", correct: false },
+                    { text: "Oxygen", correct: true },
+                    { text: "Osmium", correct: false },
+                    { text: "Iron", correct: false },
+                ]
+
+            },
+            {
+                question: "What is the largest organ in the human body?",
+                answers: [
+                    { text: "Heart", correct: false },
+                    { text: "Skin", correct: true },
+                    { text: "Liver", correct: false },
+                    { text: "Brain", correct: false },
+                ]
+
+            },
+        ];
+        const questionElement = document.getElementById("question");
+        const answerbutton = document.getElementById("ans_btn");
+        const nextbutton = document.getElementById("next_btn");
+
+        let currentquestionindex = 0;
+        let score = 0;
+        function startquiz() {
+            currentquestionindex = 0;
+            score = 0;
+            nextbutton.innerHTML = "Next";
+            showquestion();
+        }
+        function showquestion() {
+            reset();
+            let currentquestion = questions[currentquestionindex];
+            let questionno = currentquestionindex + 1;
+            questionElement.innerHTML = questionno + ". " + currentquestion.question;
+
+            currentquestion.answers.forEach(answer => {
+                const button = document.createElement("button");
+                button.innerHTML = answer.text;
+                button.classList.add("btn");
+                answerbutton.appendChild(button);
+                if (answer.correct) {
+                    button.dataset.correct = answer.correct;
+                }
+                button.addEventListener("click", selectanswer)
+            });
+        }
+        startquiz();
+        function reset() {
+            nextbutton.style.display = "none";
+            while (answerbutton.firstChild) {
+                answerbutton.removeChild(answerbutton.firstChild);
+            }
+        }
+        function selectanswer(e) {
+            const selectedbtn = e.target;
+            const iscorrect = selectedbtn.dataset.correct === "true";
+            if (iscorrect) {
+                selectedbtn.classList.add("correct")
+                score++;
+            }
+            else {
+                selectedbtn.classList.add("incorrect")
+            }
+            Array.from(answerbutton.children).forEach(button => {
+                if (n = button.dataset.correct === "true") {
+                    button.classList.add("correct");
+                }
+                button.disabled = true;
+
+            });
+            nextbutton.style.display = "block"
+        }
+        function handlenextbutton() {
+            currentquestionindex++;
+            if (currentquestionindex < questions.length) {
+                showquestion();
+            }
+            else {
+                showscore();
+            }
+        }
+        nextbutton.addEventListener("click", () => {
+            if (currentquestionindex < questions.length) {
+                handlenextbutton()
+            }
+            else {
+                startquiz();
+            }
+        })
+        function showscore() {
+            reset();
+            questionElement.innerHTML = `you scored ${score} out of ${questions.length}`
+            nextbutton.innerHTML = "play again"
+            nextbutton.style.display = "block"
+        }
+    </script>
+</body>
+
+</html>

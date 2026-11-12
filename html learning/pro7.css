@@ -1,0 +1,13 @@
+/* class can be inplimented by . and id can be implemented by #*/
+.red{
+    color: rgb(241, 3, 3);
+}
+.bgcolor{
+    background-color: beige;
+}
+#first{
+    background-color: rgb(181, 152, 207);
+}
+#second{
+    background-color: aqua;
+}

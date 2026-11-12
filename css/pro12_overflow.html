@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overflow property</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 40vw;
+            height: 40vh;
+            border: solid 2px black;
+            overflow: auto;
+            /* white-space: nowrap; */
+        }
+        .box1{
+             width: 40vw;
+            height: 40vh;
+            border: solid 2px black;
+            overflow: auto;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        /* with auto , white space and text overflow ellipse wee can see ... */
+        .box3{
+            width: 40vw;
+            height: 40vh;
+            border: solid 2px black;
+            overflow:scroll;
+        }
+        /* whitespace : only horizontal line , no new line */
+  </style>
+</head>
+<body>
+    <div class="box">
+        Lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae porro at voluptates id deserunt? Id iusto a pariatur eius rerum iste esse distinctio maiores, ullam placeat tempore quidem quibusdam sapiente ex culpa hic, sequi quod, commodi odit? Eos, asperiores doloremque ipsum ratione deleniti est voluptas cum fugit nulla vel esse earum ut possimus sit quo? ipsum dolor sit amet consectetur, adipisicing elit. Iste repellat voluptates soluta id veritatis, error omnis facilis inventore officia doloremque nostrum dicta maxime debitis quae. Ea porro animi, facere at molestiae nisi voluptatem officiis exercitationem! Facere consequuntur earum quaerat dolorum qui id iste aspernatur rem odio quam ipsam laudantium, vitae perferendis possimus. Odio, voluptatibus laboriosam! ipsum dolor sit amet consectetur adipisicing elit. At vero culpa voluptatem, ex qui commodi deserunt nostrum labore odit? Dicta eos architecto molestiae. Est ut mollitia quos voluptatem, deserunt dignissimos beatae iste fugiat doloribus sit illo, facere nihil? Temporibus reprehenderit ducimus in maiores. Eos, ex? Nisi vitae, recusandae perferendis debitis culpa tempore accusamus totam odio deserunt?ipsum dolor sit amet consectetur adipisicing elit. Quasi distinctio inventore voluptas, magni architecto culpa quod necessitatibus ratione voluptate nobis quidem similique ex explicabo iusto non, aliquam molestias! Autem officia veniam minus magnam? Explicabo. ipsum dolor sit amet consectetur, adipisicing elit. Ab reiciendis facere sapiente voluptates hic, placeat beatae obcaecati sequi, animi assumenda quidem, enim ducimus totam odit! Reiciendis tempore, distinctio dignissimos eveniet laboriosam doloremque asperiores, porro, eaque laudantium corporis quibusdam enim delectus nulla perferendis blanditiis voluptatum.
+    </div>
+    <div class="box1">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus enim quam tempore harum, alias eos et omnis quos adipisci sunt ea. Delectus, nihil. Facere fugiat cum eaque corporis nam impedit rerum numquam, aut voluptas ut dolorem omnis non autem deleniti recusandae suscipit asperiores repellat? Modi architecto impedit commodi aut eveniet! Cum omnis nihil animi!
+    </div>
+    <div class="box3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda porro ipsa, ducimus, enim alias, quos aut et magnam provident sequi adipisci odio fugit sit perferendis fuga minima doloribus praesentium molestias.
+
+    </div>
+</body>
+</html>
+<!-- we can also use overflow x and y for different propertys ; overflow :x y; -->

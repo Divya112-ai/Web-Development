@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why and When</title>
+<style>
+  body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.blog-post {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.blog-post h1 {
+  color: #3535b8;
+  margin-bottom: 0.5rem;
+}
+
+.blog-post blockquote {
+  background-color: #f0f4f8;
+  padding: 1rem;
+  border-left: 4px solid #3535b8;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+.comment-invite {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+}
+
+/* Footer styling */
+footer {
+  background-color: #3535b8;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  footer {
+    font-size: 0.9rem;
+  }
+}
+</style>
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+  <article class="blog-post">
+    <h1>Why and When: The Power of Timing</h1>
+    <p><em>Published on November 25, 2025</em></p>
+
+    <p>
+      In the world of creativity and coding, timing is everything. Whether you're launching a new project,
+      debugging a stubborn error, or presenting your ideas to the world — knowing when to act can make all the difference.
+    </p>
+
+    <p>
+      This week, I reflected on how small decisions — like when to start a server, when to ask for feedback,
+      or when to take a break — shaped the outcome of my work. I realized that success isn’t just about skill,
+      it’s about rhythm. About listening to your intuition and trusting the process.
+    </p>
+
+    <blockquote>
+      “The right moment doesn’t shout. It whispers. You just have to be quiet enough to hear it.”
+    </blockquote>
+
+    <p>
+      I’ll be sharing more behind-the-scenes stories from my projects — from merging password tools to designing expressive layouts.
+      If you’ve ever felt stuck or unsure, remember: the right time is often just a breath away.
+    </p>
+
+    <p class="comment-invite">
+      💬 <strong>What’s your favorite moment of clarity?</strong> Drop a comment or share your story — I’d love to hear it.
+    </p>
+  </article>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

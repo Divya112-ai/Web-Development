@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object fit and cover</title>
+    <style>
+        .container{
+            width: 688px;
+            height: 634px;
+            border: 2px black solid;
+            background-color: aqua;
+        }
+        img{
+             width: 688px;
+            height: 634px;
+            /* browser cut the image as it want */
+            /* object-fit: cover; */
+            /* object-fit: fill; */
+            /* object-fit: scale-down; */
+            /* broweser cant cut img*/
+            object-fit: contain;
+            /* object-position: top right; */
+            object-position: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="img3.jpg" alt="">
+    </div>
+</body>
+</html>

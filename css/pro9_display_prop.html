@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css Display property</title>
+</head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            border: black solid 2px;
+            display:inline-block;
+            width:50px ;
+            padding: 45px;
+            margin: 34px;
+            
+        }
+        .box1{
+            /* display: none; */
+            /* space is also non displayed */
+        }
+        .box2{
+            /* visibility: hidden; */
+            /* only content is hidden ,space is there */
+        }
+    </style>
+<body>
+    <div class="box box2">
+        i am box
+    </div>
+    <div class="box box1">
+        also a nice box
+    </div>
+    <span class="box2">i am good</span>
+    <span>girl</span>
+</body>
+
+</html>
+<!-- paading is not applied in top for inline elements , we can do this by writing inline block in style-->
+ <!-- when there is no inline block written , we cant apply width -->
+
+ <!-- ther is video description link 23 -->

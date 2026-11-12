@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .child{
+            background-color: rgb(150, 222, 222);
+            border: 2px solid black;
+            margin: 20px;
+            padding: 20px;
+        }
+         .childcontainer{
+            background-color: rgb(23, 89, 89);
+            border: 2px solid black;
+            margin: 20px;
+            padding: 20px;
+        }
+         .container{
+            background-color: rgb(244, 78, 177);
+            border: 2px solid black;
+            margin: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="childcontainer">
+            <div class="child">
+                hellooooooooo
+            </div>
+        </div>
+    </div>
+    <script>
+        // document.querySelector(".child").addEventListener("contextmenu",()=>{
+        //     alert("you licked")
+        // })
+        let varr=  document.querySelector(".child")
+        varr.addEventListener("click",(e)=>{
+            // e.stopPropagation()
+            alert("you clicked child")
+        })
+        let varr2=document.querySelector(".container")
+        varr2.addEventListener("click",()=>{
+            alert("clicked container")
+        })
+          let varr3=document.querySelector(".childcontainer")
+        varr3.addEventListener("click",()=>{
+            alert("clicked childcontainer")
+        })
+        
+        function getRandomColor()
+        {
+            let var1=Math.ceil(0+Math.random()*255);
+            let var2=Math.ceil(0+Math.random()*255);
+            let var3=Math.ceil(0+Math.random()*255);
+            return `rgb(${var1}, ${var2}, ${var3 })`
+        }
+        setInterval(()=> {
+            document.querySelector(".childcontainer").style.background=getRandomColor();
+        }, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form example</title>
+    <link rel="stylesheet" href="pro5_form.css">
+    <link rel="icon" href="img8.png" type="icon">
+    
+</head>
+<body>
+    <script src="pro5_form.js"></script>
+    <h2> REGISTRATION FORM </h2>
+        <form action="post"></form>
+        <div>
+            <h3>personal details</h3>
+        <label for="username">USERNAME : </label>
+        <input type="text" autofocus id="username" name="username" placeholder="enter your username">
+        <!--place holder is used for a msg , to give in box-->
+        <br>
+        <label for="name">NAME:</label>
+        <input type="text" id ="name" name="name" placeholder="enter your name">
+        <br>
+        <label for="number">NUMBER :</label>
+        <input type="number" required id="name" name="phone number" placeholder="enter your phone number">
+        </div>
+        <div>
+            <label for="dob">DOB:</label>
+            <input type="date" required id="dob" name="dob">
+        </div>
+        <div>
+            <label for="color">FAVORITE COLOR :
+            </label>
+            <input type="color" name="color" width="10" height="10">
+        </div>
+        <DIV>
+            <label for="datetime">TIME OF NOW :</label>
+            <input type="time" name="datetime" id="datetime">
+        </DIV>
+        <div>
+            <label for="email">EMAIL :</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div>
+            <h3>gender</h3>
+            <label for="male">male</label>
+            <input type="radio"id="male" name="gender" value="male">
+            <label for="female">female</label>
+            <input type="radio" id="female" name="gender" value="female" >
+        </div>
+        <!-- WHAT IS THIS VALUE? -->
+        <!--name of radio button should similar , at a time only one button is selected-->
+        <!--if id is not equal to for name , then if we click on female word the button is not selected  -->
+        <div>
+            <h3>your favorite  sports</h3>
+        <input type="checkbox" id="football" name="football">
+        <label for="football">football</label>
+        
+        <input type="checkbox" id="basketball" name="basketball">
+        <label for="basketball">basketball</label>
+        
+        <input type="checkbox" id="cricket" name="cricket">
+        <label for="football">cricket</label>
+        <input type="checkbox" name="badminton" id="badminton">
+        <label for="badminton">badminton</label>
+        </div>
+        <div>
+            <h3>feedback</h3>
+            <label for="comment">enter your comment here....</label>
+            <br>
+            <textarea name="comment" rows="5" cols="50" id="comment"></textarea>
+        </div>
+        <div>
+            <h3>your favorite fruit</h3>
+            <label for="fruits">fruits</label>
+            <br>
+            <select name="fruits" id="fruits">
+                <option value="apple">apple</option>
+                <option value="banana">banana</option>
+                <option value="mango">mango</option>
+                <option value="papaya">papaya</option>
+            </select>
+        </div>
+        
+        
+</body>
+</html>
+<!--auto focus :- cursur gooes to that by  itself
+  required :- its necessary to enter -->

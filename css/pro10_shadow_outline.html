@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shadow , outline</title>
+    <style>
+        div{
+            border: black solid 2px;
+            box-shadow:5px 5px 3px rgb(229, 131, 147) ;
+            outline: 1px solid red;
+            outline-offset:5px;
+            border-radius: 5px;
+            /* boxshadow : hoffset , v-offset blur spread color insert */
+        }
+        p{
+            text-shadow: 5px 5px 3px rgb(105, 147, 232);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        im box
+    </div>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta dignissimos doloribus minima itaque illo culpa id nobis maiores maxime fuga incidunt laborum perferendis, ab molestias recusandae nulla asperiores temporibus autem!
+    </p>
+</body>
+</html>
+<!-- outline offset is for diffrence between border and outline -->

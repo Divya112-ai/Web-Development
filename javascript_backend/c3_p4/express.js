@@ -1,0 +1,43 @@
+  const express = require('express')
+const app = express()
+const port = 3000
+
+app.use(express.static('public'))
+
+// app.get or app.post or app.put or app.delete(path,handler)
+app.get('/', (req, res) => {
+  res.send('Hello World2!')
+})
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+app.get('/about', (req, res) => {
+    res.send('About Page')
+    })
+app.get('/contact', (req, res) => {
+    res.send('Contact Page')
+    }   )
+app.get('/help', (req, res) => {
+    res.send('Help Pag')
+    }   )
+app.get('/services', (req, res) => {
+    res.send('Services Page')
+    }   )
+app.get('/products', (req, res) => {
+    res.send('Products Page')
+    }   )
+
+app.get('/blog/:slug' ,(req, res) => {
+    res.send(`Blog Page: ${req.params.slug}`
+
+    )
+})
+// url parameters , : second and slug
+app.get('/blog/:slug/:second' ,(req, res) => {
+    res.send(`Blog Page: ${req.params.slug} and ${req.params.second}`
+
+    )
+})

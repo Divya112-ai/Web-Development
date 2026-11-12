@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>notes</title>
+    <style>
+        .container{
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(rgb(239, 185, 194) , rgb(171, 79, 171));
+            color: white;
+            padding-top: 4%;
+            padding-left: 10%;
+        }
+        .container h1 {
+            font-size: 70px;
+            padding-left: 10px;
+            display: flex;
+            align-items: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+         .container h1 img{
+            padding-right: 10PX;
+         }
+         .container button{
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgb(181, 2, 181));
+            color: white;
+            font-size: 20px;
+            outline: none;
+            border: none;
+            border-radius: 40px;
+            padding: 15px 25px;
+            margin: 30px 0 20px;
+            cursor: pointer;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+         }
+         .input{
+            position: relative;
+            width: 100%;
+            max-width:500px;
+            min-height: 150px;
+
+            background: rgb(228, 227, 227);
+            color: rgb(43, 42, 42);
+            padding: 20px;
+            margin: 20px 0;
+            outline: none;
+            border-radius: 10px;
+         }
+         .input img{
+            position: absolute;
+            right: 10px;
+            cursor: pointer;
+            width: 35px;
+            bottom: 15px;
+            opacity: 0.5;
+         }
+         .notes{
+           font-size: 20px;
+           font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> <img src="notes.png" width="50px">Notes </h1>
+        <button>Create notes</button>
+         <div class="notes">   
+            <!-- <p contenteditable="true" class="input" >
+                <img src="delete.png" width="35px">
+            </p> -->
+        </div> 
+    </div>
+    <script>
+        const notes=document.querySelector('.notes');
+        const btn=document.querySelector('button');
+        let notesarr=document.querySelectorAll('.input');
+
+         function updateStorage(){
+    localStorage.setItem('notes', notes.innerHTML);
+}
+        function showNotes(){
+           notes.innerHTML=localStorage.getItem('notes');
+
+        }
+
+        showNotes();
+        btn.addEventListener('click',()=>{
+           let inputbox=document.createElement('p');
+           let img=document.createElement('img');
+           inputbox.className="input";
+           inputbox.setAttribute('contenteditable','true');
+              img.src="delete.png";
+              notes.appendChild(inputbox).appendChild(img) ;
+
+        })
+        notes.addEventListener('click',(e)=>{
+        if(e.target.tagName==="IMG"){
+            e.target.parentElement.remove();
+            updateStorage();
+        }
+        else if(e.target.tagName==="P"){
+            notesarr=document.querySelectorAll('.input');
+            notesarr.forEach((note)=>{
+                note.addEventListener('input',()=>{
+                    updateStorage();
+                })
+            })
+        }
+    
+        })
+       document.addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+        document.execCommand('insertLineBreak');
+        event.preventDefault();
+    }
+});
+    </script>
+</body>
+</html>

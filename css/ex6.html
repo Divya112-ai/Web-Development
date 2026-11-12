@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Sunuwar&display=swap');
+        .logo{
+            display: flex;
+        }
+        .logo img{
+            width: 164px;
+            
+        }
+        nav{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            
+        }
+        .right ul{
+            display: flex;
+        }
+        .right ul li{
+            list-style: none;
+            padding: 10px;
+            font-size: 14px;
+            font-family: "Noto Sans Sunuwar", sans-serif;
+        }
+        .container{
+            border: black solid 2px;
+            /* height: 90vh; */
+            margin: auto;
+            width: 80vh;
+            display: grid;
+            grid-template-rows: 150px 150px 150px;
+            grid-template-areas: "item1 item2 item3";
+        }
+        .item{
+            border: red solid 2px;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="img6ex.jpeg" alt="">
+            </div>
+            <div class="right">
+                <ul>
+                <li>products</li>
+                <li>pricising</li>
+                <li>resources</li>
+                <li>about us</li>
+                <li><img width="23px" height="23px" src="img3.jpg" alt=""></li>
+            </ul>
+            </div>
+        </nav>
+        <main>
+            <div class="container">
+            <div class="item1 item">english</div>
+            <div class="item item2">Deutsch</div>
+            <div class="item item3">Italiano</div>
+            <div class="item item4">Español</div>
+            <div class="item item5">français</div>
+            <div class="item item6">Português brasileiro</div>
+            <div class="item item7">日本</div>
+            <div class="item item8">한국어</div>
+            <div class="item item9">华语</div>
+            <div class="item item10">華語</div>
+            </div>
+        </main>
+    
+      
+</body>
+</html>

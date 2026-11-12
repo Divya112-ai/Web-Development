@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("mee")
+        setTimeout(()=>
+    {
+        console.log("i am inside set timeout")
+    },2000);
+    console.log("end")
+
+    const callback=(arg)=>{
+        console.log(arg)
+    }
+    const loadScript=(src , callback)=>{
+        let sc= document.createElement("script");
+        sc.src=src;
+        sc.onload=callback("anuu");
+        document.head.append(sc)
+        loadScript("",)
+    }
+    </script>
+</body>
+</html>

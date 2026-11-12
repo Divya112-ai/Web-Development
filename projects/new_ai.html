@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Feedback Form</title>
+  <style>
+    /* styles.css */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f4f8;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 30px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+form button {
+  width: 100%;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #1b5e20;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    margin: 20px;
+    padding: 20px;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📋 Student Feedback Form</h1>
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" placeholder="Enter subject name" required />
+
+      <label for="division">Division</label>
+      <select id="division" name="division" required>
+        <option value="">Select your division</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+      </select>
+
+      <label for="feedback">Feedback</label>
+      <textarea id="feedback" name="feedback" rows="5" placeholder="Write your feedback here..." required></textarea>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </div>
+<script>
+  // Dummy function to generate a 2-line summary
+  function generateSummary(feedback) {
+    return "Summary: " + feedback.slice(0, 60) + "..."; // Just a mock summary
+  }
+
+  // Dummy function to determine sentiment
+  function generateSentiment(feedback) {
+    const lower = feedback.toLowerCase();
+    if (lower.includes("great") || lower.includes("excellent") || lower.includes("love")) {
+      return "Positive";
+    } else if (lower.includes("okay") || lower.includes("average")) {
+      return "Neutral";
+    } else {
+      return "Negative";
+    }
+  }
+
+  document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent actual form submission
+
+    // Get form values
+    const name = document.getElementById("name").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const division = document.getElementById("division").value;
+    const feedback = document.getElementById("feedback").value.trim();
+
+    // Simple validation
+    if (!name || !subject || !division || !feedback) {
+      alert("Please fill in all fields before submitting.");
+      return;
+    }
+
+    // Generate summary and sentiment
+    const summary = generateSummary(feedback);
+    const sentiment = generateSentiment(feedback);
+
+    // Display result
+    alert(
+      `Thank you, ${name}!\n\n${summary}\nSentiment: ${sentiment}`
+    );
+
+    // Optionally clear the form
+    this.reset();
+  });
+</script>
+</body>
+</html>

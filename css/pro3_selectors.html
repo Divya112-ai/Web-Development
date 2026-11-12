@@ -1,0 +1,101 @@
+
+
+
+
+
+00000000000000<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css selectors</title>
+    <style>
+        /* element selector : how much div there in prograam are going to be red  */
+        div{
+             background-color: red; 
+        }
+        /* class selector: but when we want to add style on only one div , we can write , class */
+        .red{
+            background-color: yellow;
+        }
+        /* id selector :  */
+        #green {
+            background-color: green;
+        }
+        /* child selector : should to be direct child*/
+        div > p{
+            background-color: blue;
+        }
+        /* descendant selector : if its not direct child , but anywhere insie div , style is applied*/
+        div span{
+            background-color: blueviolet;
+        }
+        /* universal selector */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* attribute selector */
+        [data=a]
+        {
+            background-color: blue;
+        }
+        /* pseudo selector */
+        a :visited{
+            color:red;
+        }
+        a :link{
+            color: rgb(1, 217, 69);
+        }
+        /* active : when we click it color changed to red */
+        a:active{
+            background-color: red;
+        }
+        /* hover : when just tocuch its yellow */
+        a:hover
+        {
+            color: yellow;
+        }
+        p:first-child{
+            background-color: aqua;
+        }
+        p::before { content: "Note: "; font-weight: bold; }
+ </style>
+</head>
+<body>
+    <main>
+        <p>hey im first</p>
+        <p>hey im second</p>
+    </main>
+    
+    <div class="red">
+        i am div
+    </div>
+    <div>
+        im second div
+    </div>
+    <div id="green">
+        im another div
+    </div>
+    <!-- here p is direct child of div so the style is applied -->
+    <div> 
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea cum pariatur perferendis!
+        </p>
+        
+    </div>
+    <!-- here div is not direct child of div so , chile selector cants be used -->
+    <!-- but we can use descendant selector , -->
+    <div>
+    <article>
+    <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum, consequatur.</span>
+    </article>
+    </div>
+    <a href="https://www.google.com">open google</a>
+    <a href="https://www.facebook.com">open facebook</a>
+    <div>
+        <h3 data="a">css sellector attribute selector</h3>
+    </div>
+</body>
+</html>
+<!-- css selectors : they allows us to choose specific element and apply stle to them -->

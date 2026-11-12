@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("this is promise")
+        let pro1=new Promise((resolve , reject)=>{
+            let a=Math.random()
+            if(a<0.5){
+                reject("random number is not valid")
+            }
+            else{
+            setTimeout(()=>{
+                console.log("yes i am done")
+                resolve("harry")
+            },3000);
+       }
+     })
+        pro1.then(()=>{
+            console.log(a)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox</title>
+    <style>
+        .container{
+            border: 2px solid rebeccapurple;
+            display: flex;
+            height: 80vh;
+            /* justify-content: center; */
+            /* justify-content: right; */
+            /* space at starting and end also */
+            justify-content: space-around;
+            
+            /* space only in between */
+            /* justify-content: space-between; */
+            
+            align-items: flex-end;
+            /* align-items: flex-start; */
+
+            /* flex-direction: row-reverse; */
+            /* flex-direction: column-reverse; *//
+            /* flex-direction: columns; */
+            /* align-items: center; */
+            /* flex-wrap: wrap; */
+            /* align-items: center; */
+            align-content: flex-start;
+            
+            /* flex-flow: row row-reverse; */
+            flex-flow: row wrap;
+            gap:13px;
+            row-gap: 13px;
+            column-gap: 10px;
+            /* gap: 13px 10px; */
+        }
+        .item:hover{
+            background-color: red;
+        }
+        .item{
+            
+            height: 100px;
+            
+            width: 100px;
+            border: 2px solid black;
+            margin: 4px;
+            background-color: rgb(239, 239, 40);
+        }
+        .item1{
+            border: rgb(231, 24, 58) 3px solid;
+            order: 1;
+            flex-grow: 1;
+            align-self: first baseline;
+        }
+        .item2{
+            border: blue 3px solid;
+            order: 2;
+            /* flex-shrink: 2; */
+        }
+        /* default order 0 */
+        .item3{
+            border: purple 3px solid;
+        }
+    </style>
+</head> 
+<body>
+    <main>
+        <div class="container">
+            <div class="item item1"></div>
+            <div class="item item2"></div>
+            <div class="item item3"></div> 
+            
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+<div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+<div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+<div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+
+
+            
+        </div>
+    </main>
+</body>
+</html>

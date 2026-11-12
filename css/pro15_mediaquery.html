@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media query</title>
+    <style>
+        body{
+            background-color: red;
+        }
+        @media only screen and (max-width :55px) {
+          body{  background-color: blue;}
+
+        }
+        .box{
+            border: black solid 2px;
+            height: 344px;
+            width: 344px;
+            padding: 3px;
+            margin: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div>im box</div>
+    <div class="box">
+        im another box
+    </div>
+    <div class="box">
+        im BOX2
+    </div>
+</body>
+</html>

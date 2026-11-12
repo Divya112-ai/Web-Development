@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather app</title>
+    <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+    <div class="card">
+        <div class="search">
+            <input type="text" placeholder="enter city" spellcheck="false">
+            <button><img src="https://tse2.mm.bing.net/th/id/OIP.JrBpGKFj_CCBIrP1OxprnwHaHa?pid=Api&P=0&h=180" alt=""></button>
+        </div>
+        <div class="weather">
+        <img src="w_icon.png" class="w_icon">
+        <h1 class="temp">22°c</h1>
+        <h2 class="city">new york</h2>
+        <div class="details">
+            <div class="col">
+                <img src="hum.png" alt="">
+                <div>
+                    <p class="humidity">50%</p>
+                    <p>humidity</p>
+                </div>
+            </div>
+             <div class="col">
+                <img src="wind.png" alt="">
+                <div>
+                    <p class="wind">15 km/h</p>
+                    <p>wind speed</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        const api="245644edad665e22f7337ef321ab919e";
+        // const apiurl="https://api.openweathermap.org/data/2.5/weather?&units=metric"
+        const apiurl = "https://api.openweathermap.org/data/2.5/weather?&q=";
+        const weathericon=document.querySelector(".w_icon")
+        const searchbox=document.querySelector(".search input")
+        const searchbtn=document.querySelector(".search button")
+        
+        async function checkweather(city) {
+            const response=await fetch(apiurl+city+`&units=metric&appid=${api}`);
+            var data=await response.json();
+            console.log(data);
+
+            document.querySelector(".city").innerHTML=data.name;
+            document.querySelector(".temp").innerHTML=data.main.temp +"°c";
+            document.querySelector(".humidity").innerHTML=data.main.humidity +"%";
+            document.querySelector(".wind").innerHTML=data.wind.speed+"km/h";
+            if(data.weather[0].main=="clouds"){
+                weathericon.src="sunny.png";
+            }
+           else if(data.weather[0].main=="Rain"){
+                weathericon.src="black_cloud.jpeg";
+            }
+            
+        }
+        searchbtn.addEventListener("click",()=>{
+ checkweather(searchbox.value);
+        })
+        
+  </script>
+</body>
+</html>
+<!-- https://api.openweathermap.org/data/2.5/weather?q={ahmedabad}&appid={245644edad665e22f7337ef321ab919e}&units=metric -->
